@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    <title>
+        {% block page_name %}
+        {% endblock %} | airbnb
+    </title>
+</head>
+
+<body>
+    <header>
+        {% include "partials/nav.html" %}
+        {% block search_bar %}
+        <form method="get" action="{% url "rooms:search" %}">
+            {% comment %} input의 name 속성은 url에서 입력값의 쿼리이름이 되어줌 {% endcomment %}
+            {% comment %} http://127.0.0.1:8000/rooms/search/?city=asdf {% endcomment %}
+            <input name="city" placeholder="Search by City" />
+        </form>
+        {%endblock%}
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% include "partials/footer.html" %}
+    </footer>
+
+</body>
+
+</html>

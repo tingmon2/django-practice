@@ -1,0 +1,25 @@
+{
+  "name": "airbnb-tingmon",
+  "version": "1.0.0",
+  "description": "Taekmin Jeong 2020",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tingmon/airbnb-tingmon-practice.git"
+  },
+  "scripts": {
+    "css": "gulp"
+  },
+  "homepage": "https://github.com/tingmon/airbnb-tingmon-practice#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.0",
+    "tailwindcss": "^2.0.2"
+  }
+}

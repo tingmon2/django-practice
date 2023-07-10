@@ -1,0 +1,18 @@
+<a href="{% url "core:home" %}">Airbnb</a>
+<ul>
+    {% comment %} user는 어디에서 왔고 어떻게 리턴 값이 특정된 적 없는 nav.html에서 쓰일 수 있는가? {% endcomment %}
+    {% comment %} context_processors라는 파이썬 함수가 template에 정보를 저장함(어디서든 접근가능)  {% endcomment %}
+    {% comment %} 이 경우 저장된 쿠키에서 user를 찾고 그것을 template에 자동으로 넣어줌 {% endcomment %}
+    {% if user.is_authenticated%}
+        <li>
+            <a href="{% url "users:logout" %}">Log out</a>
+        </li>
+    {%else%}
+        <li>
+            <a href="{% url "users:login" %}">Log in</a>
+        </li>
+        <li>
+            <a href="{% url "users:signup" %}">Sign Up</a>
+        </li>
+    {%endif%}
+</ul>
